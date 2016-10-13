@@ -13,15 +13,16 @@ import java.util.regex.Pattern;
 
 /**
  * @author Kurtis Chiappone
- * @date 10/9/2016
  */
 public class UnixUtil {
 
     private static final Logger logger = LoggerFactory.getLogger( UnixUtil.class );
 
     /**
-     * @param dfResult
-     * @return
+     * Parses the output of the 'df' command.
+     *
+     * @param dfResult the 'df' command output
+     * @return a map of disk mounts to disk utilization (%)
      */
     public static Map<String, String> parseDiskSpace( String dfResult ) {
 
@@ -57,8 +58,10 @@ public class UnixUtil {
     }
 
     /**
-     * @param duResult
-     * @return
+     * Parses the output of the 'du' command.
+     *
+     * @param duResult the 'du' command output
+     * @return the 'du' number
      */
     public static String parseDiskUsage( String duResult ) {
 
@@ -84,8 +87,10 @@ public class UnixUtil {
     }
 
     /**
-     * @param lsResult
-     * @return
+     * Parses the file size from the 'ls' command.
+     *
+     * @param lsResult the 'ls' command output
+     * @return the file size
      */
     public static String parseFileSize( String lsResult ) {
 
